@@ -34,4 +34,10 @@ async function updateCustomer(id, customer){
     await conn.query(sql, values)
 }
 
-module.exports = {selectCustomer, insertCustomer, updateCustomer}
+async function deleteCustomer(id){
+    const conn = await connect();
+    const sql = 'DELETE FROM clientes WHERE id=?;';
+    return await conn.query(sql, [id])
+}
+
+module.exports = {selectCustomer, insertCustomer, updateCustomer, deleteCustomer}

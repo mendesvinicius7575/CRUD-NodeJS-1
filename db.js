@@ -27,4 +27,11 @@ async function insertCustomer(customer){
     await conn.query(sql, values)
 }
 
-module.exports = {selectCustomer, insertCustomer}
+async function updateCustomer(id, customer){
+    const conn = await connect();
+    const sql = 'UPDATE clientes SET nome=?, idade=?, uf=? WHERE id=?';
+    const values = [customer.nome, customer.idade, customer.uf, id]
+    await conn.query(sql, values)
+}
+
+module.exports = {selectCustomer, insertCustomer, updateCustomer}

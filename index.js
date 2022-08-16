@@ -10,8 +10,8 @@ async function enviar(ola2){
     
     const db = require("./db");
 
-    console.log("INSERT")
-    await db.insertCustomer({nome: ola2.n, idade: 18, uf: "SP"})
+    //console.log("INSERT")
+    //await db.insertCustomer({nome: ola2.n, idade: 18, uf: "SP"})
 
     console.log('UPDATE')
     await db.updateCustomer(6, {id: 5, nome: "josef", idade: 55, uf: "RG"})
